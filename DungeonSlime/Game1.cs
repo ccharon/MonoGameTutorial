@@ -91,25 +91,25 @@ public class Game1 : Core
         _tilemap.Scale = new Vector2(4.0f, 4.0f);
         
         // Load the bounce sound effect
-        //_bounceSoundEffect = Content.Load<SoundEffect>("audio/bounce");
+        _bounceSoundEffect = Content.Load<SoundEffect>("audio/bounce");
 
         // Load the collect sound effect
-        //_collectSoundEffect = Content.Load<SoundEffect>("audio/collect");
+        _collectSoundEffect = Content.Load<SoundEffect>("audio/collect");
 
         // Load the background theme music
-        //Song theme = Content.Load<Song>("audio/theme");
+        Song theme = Content.Load<Song>("audio/theme");
 
         // Ensure media player is not already playing on device, if so, stop it
-        // if (MediaPlayer.State == MediaState.Playing)
-        // {
-        //     MediaPlayer.Stop();
-        // }
+        if (MediaPlayer.State == MediaState.Playing)
+        {
+            MediaPlayer.Stop();
+        }
 
         // Play the background theme music.
-        // MediaPlayer.Play(theme);
+        MediaPlayer.Play(theme);
 
         // Set the theme music to repeat.
-        // MediaPlayer.IsRepeating = true;
+        MediaPlayer.IsRepeating = true;
     }
 
     protected override void Update(GameTime gameTime)
@@ -212,7 +212,7 @@ public class Game1 : Core
             _batVelocity = Vector2.Reflect(_batVelocity, normal);
             
             // Play the bounce sound effect
-            // _bounceSoundEffect.Play();
+            _bounceSoundEffect.Play();
         }
 
         _batPosition = newBatPosition;
@@ -231,7 +231,7 @@ public class Game1 : Core
             AssignRandomBatVelocity();
             
             // Play the collect sound effect
-            // _collectSoundEffect.Play();
+            _collectSoundEffect.Play();
         }
 
         base.Update(gameTime);
