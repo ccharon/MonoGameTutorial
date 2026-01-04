@@ -1,7 +1,9 @@
 using System;
+using GameLibrary.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace GameLibrary;
 
@@ -34,6 +36,16 @@ public class Core : Game
     /// </summary>
     public static new ContentManager Content { get; private set; }
 
+    /// <summary>
+    /// Gets a reference to the input management system.
+    /// </summary>
+    public static InputManager Input { get; private set; }
+
+    /// <summary>
+    /// Gets or Sets a value that indicates if the game should exit when the esc key on the keyboard is pressed.
+    /// </summary>
+    public static bool ExitOnEscape { get; set; }
+    
     /// <summary>
     /// Creates a new Core instance.
     /// </summary>
@@ -75,6 +87,9 @@ public class Core : Game
 
         // Mouse is visible by default.
         IsMouseVisible = true;
+        
+        // Exit on escape is true by default
+        ExitOnEscape = true;
     }
 
     protected override void Initialize()
@@ -87,5 +102,21 @@ public class Core : Game
 
         // Create the sprite batch instance.
         SpriteBatch = new SpriteBatch(GraphicsDevice);
+        
+        // Create a new input manager.
+        Input = new InputManager();
+    }
+    
+    protected override void Update(GameTime gameTime)
+    {
+        // Update the input manager.
+        Input.Update(gameTime);
+
+        if (ExitOnEscape && Input.Keyboard.IsKeyDown(Keys.Escape))
+        {
+            Exit();
+        }
+
+        base.Update(gameTime);
     }
 }
