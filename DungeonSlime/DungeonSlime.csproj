@@ -30,4 +30,8 @@
     <ItemGroup>
       <ProjectReference Include="..\MonoGameLibrary\MonoGameLibrary.csproj" />
     </ItemGroup>
+    <PropertyGroup>
+        <PublishTrimmed>false</PublishTrimmed>
+        <PublishSingleFile>true</PublishSingleFile>
+    </PropertyGroup>
 </Project>
