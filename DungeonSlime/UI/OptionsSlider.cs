@@ -5,7 +5,7 @@ using Gum.Managers;
 using Microsoft.Xna.Framework;
 using Gum.Forms.Controls;
 using MonoGameGum.GueDeriving;
-using GameLibrary.Graphics;
+using MonoGameLibrary.Graphics;
 
 namespace DungeonSlime.UI;
 

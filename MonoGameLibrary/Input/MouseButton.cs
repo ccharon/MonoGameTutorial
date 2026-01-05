@@ -1,4 +1,4 @@
-namespace GameLibrary.Input;
+namespace MonoGameLibrary.Input;
 
 public enum MouseButton
 {

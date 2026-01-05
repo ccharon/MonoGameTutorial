@@ -1,13 +1,13 @@
 using System;
-using GameLibrary.Audio;
-using GameLibrary.Input;
-using GameLibrary.Scenes;
+using MonoGameLibrary.Audio;
+using MonoGameLibrary.Input;
+using MonoGameLibrary.Scenes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace GameLibrary;
+namespace MonoGameLibrary;
 
 public class Core : Game
 {

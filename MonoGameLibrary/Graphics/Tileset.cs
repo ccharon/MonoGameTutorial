@@ -1,4 +1,4 @@
-namespace GameLibrary.Graphics;
+namespace MonoGameLibrary.Graphics;
 
 public class Tileset
 {

@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameLibrary.Graphics;
+namespace MonoGameLibrary.Graphics;
 
 public class TextureRegion
 {

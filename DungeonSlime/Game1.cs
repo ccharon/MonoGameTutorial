@@ -3,7 +3,7 @@ using Gum.Forms;
 using Gum.Forms.Controls;
 using MonoGameGum;
 using Microsoft.Xna.Framework.Media;
-using GameLibrary;
+using MonoGameLibrary;
 
 namespace DungeonSlime;
 

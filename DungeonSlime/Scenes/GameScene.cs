@@ -7,10 +7,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using GameLibrary;
-using GameLibrary.Graphics;
-using GameLibrary.Input;
-using GameLibrary.Scenes;
+using MonoGameLibrary;
+using MonoGameLibrary.Graphics;
+using MonoGameLibrary.Input;
+using MonoGameLibrary.Scenes;
 using Gum.Forms.Controls;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -301,12 +301,6 @@ public class GameScene : Scene
         if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Escape))
         {
             PauseGame();
-        }
-
-        // If the escape key is pressed, return to the title screen.
-        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Escape))
-        {
-            Core.ChangeScene(new TitleScene());
         }
 
         // If the space key is held down, the movement speed increases by 1.5

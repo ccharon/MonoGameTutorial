@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework.Input;
 using MonoGameGum;
 using Gum.Forms.Controls;
 using MonoGameGum.GueDeriving;  
-using GameLibrary;
-using GameLibrary.Scenes;
-using GameLibrary.Graphics;
+using MonoGameLibrary;
+using MonoGameLibrary.Scenes;
+using MonoGameLibrary.Graphics;
 
 namespace DungeonSlime.Scenes;
 
@@ -57,6 +57,7 @@ public class TitleScene : Scene
     
     private SoundEffect _uiSoundEffect;
     private Panel _titleScreenButtonsPanel;
+    
     private Panel _optionsPanel;
     
     // The options button used to open the options menu.
@@ -186,7 +187,7 @@ public class TitleScene : Scene
         startButton.Click += HandleStartClicked;
         _titleScreenButtonsPanel.AddChild(startButton);
 
-        AnimatedButton _optionsButton = new AnimatedButton(_atlas);
+        _optionsButton = new AnimatedButton(_atlas);
         _optionsButton.Anchor(Gum.Wireframe.Anchor.BottomRight);
         _optionsButton.X = -50;
         _optionsButton.Y = -12;
@@ -265,7 +266,7 @@ public class TitleScene : Scene
         sfxSlider.ValueChangeCompleted += HandleSfxSliderChangeCompleted;
         _optionsPanel.AddChild(sfxSlider);
 
-        AnimatedButton _optionsBackButton = new AnimatedButton(_atlas);
+        _optionsBackButton = new AnimatedButton(_atlas);
         _optionsBackButton.Text = "BACK";
         _optionsBackButton.Anchor(Gum.Wireframe.Anchor.BottomRight);
         _optionsBackButton.X = -28f;
